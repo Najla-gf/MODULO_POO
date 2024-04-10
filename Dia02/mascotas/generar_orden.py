@@ -10,19 +10,14 @@ oc.identificador = int(input("Ingrese identificador de la OC:\n"))
 
 #total de productos y monto
 oc.total_productos = int(input("Ingrese total de productos:\n"))
-oc.monto = int(input("Ingrese monto:\n"))
+#oc.monto = int(input("Ingrese monto:\n"))
 
-#Determinar si se aplica codigo de descuento. EL programa lo detecta según lo que usuario ingresó
+monto = int(input("Ingrese monto:\n"))
+oc.asigna_monto(monto)
+print(oc.codigo_descuento)
+
+"""#Determinar si se aplica codigo de descuento. EL programa lo detecta según lo que usuario ingresó
 if oc.monto > 20000:
     oc.codigo_descuento = "20PORCIENTO"
 elif oc.monto > 10000:
-    oc.codigo_descuento = "10PORCIENTO"
-
-
-
-""" Ingrese identificador de la OC:
-112233
-Ingrese total de productos:
-100
-Ingrese monto:
-5000"""
+    oc.codigo_descuento = "10PORCIENTO"""
