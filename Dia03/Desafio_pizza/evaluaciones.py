@@ -1,3 +1,9 @@
+"""
+    Najla Gatica
+    Lolett Llanquinao
+    Jimena Traipe
+"""
+
 from pizza import Pizza
 
 # Paso 5a: Mostrar los valores de los atributos de clase
