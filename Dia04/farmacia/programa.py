@@ -26,7 +26,12 @@ while opcion_ingreso == 1:
     print(f"PRECIO FINAL: ${m.precio_final}")
     print(f"STOCK: {m.stock}")
 
-    print(f"\nLa farmacia cuenta con {len(ingresados)} medicamento(s)\n")
     print("")
     opcion_ingreso = int(input("¿Desea agregar un medicamento?\n1. Sí\n2. No\n"))
-    
+
+
+print(f"\nLa farmacia cuenta con {len(ingresados)} medicamento(s)\n")
+
+if len(ingresados) > 0:
+    for medicamento in ingresados:
+        print(medicamento)
