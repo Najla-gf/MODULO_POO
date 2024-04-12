@@ -1,9 +1,3 @@
-"""
--Método mostrar diálogo
--Método para aumentar el nivel
--Metodo para los diálogos
-"""
-
 
 #Constructor clase personaje
 class Personaje:

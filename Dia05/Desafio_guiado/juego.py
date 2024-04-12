@@ -1,3 +1,14 @@
+"""
+Grupo 2:
+Najla Gatica
+Livio Gutierrez
+Pablo Hernández
+Manuel Ruiz
+
+"""
+
+
+
 from personaje import Personaje
 import random
 
