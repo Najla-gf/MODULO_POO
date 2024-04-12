@@ -1,42 +1,60 @@
+"""
+-Método mostrar diálogo
+-Método para aumentar el nivel
+-Metodo para los diálogos
+"""
+
+
 #Constructor clase personaje
 class Personaje:
-    def __init__(self, nombre):
-        self.nombre = nombre
-        self._nivel = 1
-        self._experiencia = 0
-
-    @property #getter del nivel del personaje
-    def nivel(self):
-        return self._nivel
+    def __init__(self, nombre, nivel=1, experiencia=0):
+        self.__nombre = nombre
+        self.__experiencia = experiencia
+        self.__nivel = nivel
+    
+    #Definimos un método para retornar el estado del personaje como una cadena
+    def __str__(self):
+        return f"Nombre: {self.__nombre} Nivel: {self.__nivel} Experiencia: {self.__experiencia}"
 
     @property #Getter de la experiencia del personaje
     def experiencia(self):
-        return self._experiencia
+        return self.__experiencia
 
-    @experiencia.setter
+    @experiencia.setter #Se va acumulando exp y aumenta o disminuye segun las batallas
     def experiencia(self, value):
-        self._experiencia = value
+        self.__experiencia = value
     
     def aumentar_exp(self, cantidad):
-        self.experiencia += cantidad
+        self.__experiencia += cantidad
 
     def disminuir_exp(self, cantidad):
-        self.experiencia -= cantidad
+        self.__experiencia -= cantidad
 
-""" def __lt__(self, otro_nivel):
+    @property #getter
+    def nivel(self):
+        return self.__nivel
+    
+    @nivel.setter #setter
+    def nivel(self):
+        if self.__experiencia >= 100:
+            self.__nivel +=1
+        elif self.__experiencia < 0:
+            self.__nivel -=1
+        
+
+
+
+    def __lt__(self, otro_nivel):
         return self.nivel < otro_nivel
 
     def __gt__(self, otro_nivel):
         return self.nivel > otro_nivel
 
-    def __eq__(self, otro_nivel):
-        return self.nivel == otro_nivel
-
-    def probabilidad_ganar(self, nivel_orco):
-        if self < nivel_orco:
+    def probabilidad_ganar(self, otro):
+        if self < otro:
             return 0.33
-        elif self > nivel_orco:
+        elif self > otro:
             return 0.66
         else:
             return 0.5
-"""
+
