@@ -94,6 +94,7 @@ class Farmacia(Tienda):
             lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info +"\n"
         return lista_productos"""
     
+    #Forma con comprehension
     def listar_productos(self):
         return ''.join([f"Nombre: {producto.nombre}, Precio: {producto.precio}" + (", Envío gratis al solicitar este producto\n" if producto.precio > 15000 else "") 
                         for producto in self._Tienda__productos])
