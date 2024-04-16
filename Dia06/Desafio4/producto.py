@@ -21,6 +21,11 @@ class Producto:
         #Método getter para acceder al stock del producto
         return self.__stock
 
+    def __add__(self, cantidad):
+        #Método de sobrecarga del operador de suma para aumentar el stock del producto
+        self.__stock += cantidad
+        return self
+
     def __sub__(self, cantidad):
         #Método de sobrecarga del operador de resta para modificar el stock del producto
         self.__stock -= cantidad

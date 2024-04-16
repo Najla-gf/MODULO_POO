@@ -3,12 +3,11 @@
     Lolett Llanquinao
     Jimena Traipe
 """
-
-
 from tienda import Tienda, Restaurante, Supermercado, Farmacia
 from producto import Producto
 
 def crear_tienda():
+    #Función para crear una nueva tienda solicitando al usuario la información necesaria
     nombre = input("Ingrese el nombre de la tienda: ")
     costo_delivery = float(input("Ingrese el costo de delivery: "))
     tipo_tienda = input("Ingrese el tipo de tienda (Restaurante/Supermercado/Farmacia): ").lower()
@@ -24,17 +23,19 @@ def crear_tienda():
         return None
 
 def ingresar_producto():
+    #Función para ingresar un nuevo producto
     nombre = input("Ingrese el nombre del producto: ")
     precio = float(input("Ingrese el precio del producto: "))
     stock = int(input("Ingrese el stock del producto: "))
     return Producto(nombre, precio, stock)
 
 def main():
+    #Función principal que gestiona la interacción con el usuario y las acciones sobre la tienda
     tienda = crear_tienda()
     if tienda is None:
         return
 
-    # Solicitar ingresar productos hasta que el usuario indique lo contrario
+    #Solicitar ingresar productos hasta que el usuario indique lo contrario
     while True:
         respuesta = input("¿Desea ingresar un producto? (s/n): ").lower()
         if respuesta == "s":
@@ -46,7 +47,7 @@ def main():
         else:
             print("Respuesta no válida. Por favor, ingrese 's' para sí o 'n' para no.")
 
-    # Presentar opciones al usuario
+    #Presentar opciones al usuario
     while True:
         print("\n¿Qué desea hacer?")
         print("1. Listar productos existentes")
