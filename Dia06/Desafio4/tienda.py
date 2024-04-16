@@ -38,7 +38,7 @@ class Tienda:
                 #stock_info = ", Envío gratis al solicitar este producto" if producto.precio > 15000 else ""
             else:
                 stock_info = f", Stock: {producto.stock}\n"
-            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info
+            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info +"\n"
         return lista_productos
 
 #Método para realizar la venta de un producto
@@ -85,15 +85,15 @@ class Farmacia(Tienda):
         self.tipo = "Farmacia"
 
 #Mensaje de envío gratis para productos sobre 15mil
-    def listar_productos(self):
+    """def listar_productos(self):
         lista_productos = ""
         for producto in self._Tienda__productos:  # Accedemos a productos con el nombre de la variable de clase original
             stock_info = ""
             if producto.precio > 15000:
                 stock_info = ", Envío gratis al solicitar este producto\n"
-            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info
-        return lista_productos
+            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info +"\n"
+        return lista_productos"""
     
-    """def listar_productos(self):
+    def listar_productos(self):
         return ''.join([f"Nombre: {producto.nombre}, Precio: {producto.precio}" + (", Envío gratis al solicitar este producto\n" if producto.precio > 15000 else "") 
-                        for producto in self._Tienda__productos])"""
+                        for producto in self._Tienda__productos])
