@@ -65,7 +65,7 @@ def main():
             tienda.realizar_venta(nombre_producto, cantidad)
 
         elif opcion == "3":
-            print("¡Hasta luego!")
+            print("¡Adiós! Muchas gracias por su preferencia")
             break
 
         else:

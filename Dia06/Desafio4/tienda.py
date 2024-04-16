@@ -27,21 +27,17 @@ class Tienda:
     def listar_productos(self):
         lista_productos = ""
         for producto in self.__productos:
-            lista_productos += self._listar_producto(producto)
-        return lista_productos
-
-    def _listar_producto(self, producto):
-        stock_info = ""
-        if self.tipo == "Restaurante" or self.tipo == "Farmacia":
             stock_info = ""
-        elif self.tipo == "Supermercado" and producto.stock < 10:
-            stock_info = f", Pocos productos disponibles: {producto.stock}\n"
-        elif self.tipo == "Farmacia":
-            stock_info = f", Envío gratis al solicitar este producto" if producto.precio > 15000 else ""
-        else:
-            stock_info = f", Stock: {producto.stock}\n"
-        return f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info
-
+            if self.tipo == "Restaurante" or self.tipo == "Farmacia":
+                stock_info = ""
+            elif self.tipo == "Supermercado" and producto.stock < 10:
+                stock_info = f", Pocos productos disponibles: {producto.stock}\n"
+            #elif self.tipo == "Farmacia":
+                #stock_info = ", Envío gratis al solicitar este producto" if producto.precio > 15000 else ""
+            else:
+                stock_info = f", Stock: {producto.stock}\n"
+            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info
+        return lista_productos
 
     def realizar_venta(self, nombre_producto, cantidad):
         for producto in self.__productos:
@@ -67,8 +63,9 @@ class Restaurante(Tienda):
         super().__init__(nombre, costo_delivery)
         self.tipo = "Restaurante"
 
+    # Imprimir mensaje de venta en supermercado
     def realizar_venta(self, nombre_producto, cantidad):
-        pass  # No se realiza ninguna acción para ventas en un restaurante
+        print(f"Venta realizada: {cantidad} unidades de {nombre_producto}")
 
 
 class Supermercado(Tienda):
@@ -82,4 +79,11 @@ class Farmacia(Tienda):
         super().__init__(nombre, costo_delivery)
         self.tipo = "Farmacia"
 
-
+def listar_productos(self):
+        lista_productos = ""
+        for producto in self._Tienda__productos:  # Accedemos a productos con el nombre de la variable de clase original
+            stock_info = ""
+            if producto.precio > 15000:
+                stock_info = ", Envío gratis al solicitar este producto\n"
+            lista_productos += f"Nombre: {producto.nombre}, Precio: {producto.precio}" + stock_info
+        return lista_productos
