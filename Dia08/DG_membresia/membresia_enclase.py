@@ -1,3 +1,14 @@
+"""
+Grupo 2:
+Edinson Ahumada
+Yanina Belmar
+Najla Gatica
+Livio Gutierrez
+Manuel Ruiz
+Pablo Hernández
+
+"""
+
 from abc import ABC, abstractmethod
 
 class Membresia(ABC):
