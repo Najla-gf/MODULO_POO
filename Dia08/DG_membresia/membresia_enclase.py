@@ -14,12 +14,11 @@ class Membresia(ABC):
         return self.__numero_tarjeta    
 
     @abstractmethod
-    def cancelar_suscripcion(self):
-        return Gratis(self.correo_suscriptor, self.numero_tarjeta)
-
-    @abstractmethod
     def cambiar_suscripcion(self, tipo_membresia):
         pass
+
+    def cancelar_suscripcion(self):
+        return Gratis(self.correo_suscriptor, self.numero_tarjeta)
 
     def _crear_nueva_membresia(self, tipo_membresia):
         if tipo_membresia == 1:
