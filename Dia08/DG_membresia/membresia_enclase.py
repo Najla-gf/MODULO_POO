@@ -80,10 +80,12 @@ class Pro(Familiar, SinConexion):
     dispositivos_maximos = 6
     dias_regalo = 15
 
-    def cambiar_suscripcion(self, tipo_membresia):
-        if tipo_membresia >= 1 and tipo_membresia <= 3:
-            return self._crear_nueva_membresia(tipo_membresia)
-        return self 
+    def cambiar_suscripcion(self, tipo_nueva_membresia: int):
+        nueva_membresia = self._crear_nueva_membresia(tipo_nueva_membresia)
+        if isinstance(nueva_membresia, Pro):
+            if isinstance(self, SinConexion):
+                nueva_membresia.dias_regalo += 5  # Agregamos 5 días extra por el cambio de membresia
+        return nueva_membresia
     
     def control_parental(self):
         pass
@@ -105,3 +107,8 @@ pro = sc.cambiar_suscripcion(4)
 print(type(pro))
 g2 = pro.cancelar_suscripcion()
 print(type(g2))
+
+
+membresia = Gratis("correo@example.com", "1234567890123456")
+nueva_membresia = membresia.cambiar_suscripcion(4)  # Cambiar a Pro
+print(nueva_membresia.costo, nueva_membresia.dispositivos_maximos, nueva_membresia.dias_regalo) #7000 6 15

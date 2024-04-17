@@ -22,7 +22,7 @@ class Membresia(ABC):
 
     @abstractmethod
     def cancelar_suscripcion(self):
-        pass
+        return MembresiaGratis(self.correo_electronico, self.numero_tarjeta)
 
     @abstractmethod
     def cambiar_membresia(self, tipo_membresia):
