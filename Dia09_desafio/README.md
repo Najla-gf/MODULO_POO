@@ -1,4 +1,5 @@
 ********************
+
 Integrantes grupo2:
 
 Edinson Ahumada
@@ -12,3 +13,5 @@ Pablo Hernández
 Manuel Ruiz
 
 *******************
+
+![Desafio](Desafio.png)
