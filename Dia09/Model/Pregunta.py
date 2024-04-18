@@ -2,12 +2,16 @@
 #-*- coding: utf-8 -*-
 
 class Pregunta:
-    def __init__(self):
-        self.enunciado = None
-        self.ayuda = None
-        self.requerida = None
-        self.lista_alternativas = None
+    def __init__(self, enunciado:str, ayuda:str, requerida:bool, lista_alternativas):
+        self.enunciado = enunciado
+        self.ayuda = ayuda
+        self.requerida = requerida
+        self.__lista_alternativas = lista_alternativas
 
-    def mostrar_enunciado(self, ):
-        pass
+    @property #Getter para la lista de alternativas
+    def lista_alternativas(self):
+        return self.__lista_alternativas
+
+    def mostrar_enunciado(self):
+        return print(self.mostrar_enunciado)
 
