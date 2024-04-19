@@ -3,15 +3,26 @@
 
 class Usuario:
     def __init__(self, correo:str, edad:int, region:int):
-        self.correo = correo
-        self.edad = edad
-        self.region = region
+        self.__correo = correo
+        self.__edad = edad
+        self.__region = region
 
     def modificar_usuario(self, nuevo_correo:str, nueva_edad:int, nueva_region:int):
-        self.correo = nuevo_correo
-        self.edad = nueva_edad
-        self.region = nueva_region
+        self.__correo = nuevo_correo
+        self.__edad = nueva_edad
+        self.__region = nueva_region
 
+    @property
+    def correo(self):
+        return self.__correo
+    
+    @property
+    def edad(self):
+        return self.__edad
+    
+    @property
+    def region(self):
+        return self.__region
 
     def contestar_encuesta(self, encuesta, respuesta):
         listado_respuesta = ListadoRespuestas(self, respuesta)
