@@ -2,7 +2,37 @@ from usuario import Usuario
 from datetime import datetime
 import json
 
-#Fecha y hora actual
+def escribir_error(err):
+    now = datetime.now()
+    with open("Dia12_desafio/error.log", 'a+') as log: 
+        log.write(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {err}\n")
+        print(err)
+        log.close()
+
+def cargar_usuarios(archivo):
+    lista_usuarios = []
+    numero_linea = 1
+    with open(archivo, 'r') as file:
+        for linea in file:
+            try:
+                datos_usuario = json.loads(linea.strip()) #le quita espacios y saltos de linea que pueda tener
+                usuario = Usuario(datos_usuario['nombre'], 
+                                datos_usuario['apellido'], 
+                                datos_usuario['email'], 
+                                datos_usuario['genero'])
+                lista_usuarios.append(usuario)
+            except Exception as e:
+                escribir_error(f"ERROR en la linea {numero_linea}: {e}")
+            numero_linea += 1 #se agrega una linea más
+    return lista_usuarios
+
+usuarios = cargar_usuarios('Dia12_desafio/usuarios.txt')
+for usuario in usuarios:
+    print(f'{usuario.nombre} {usuario.apellidos} - {usuario.email}')
+
+
+
+"""#Fecha y hora actual
 now = datetime.now()
 print(now)
 
@@ -30,6 +60,6 @@ with open("Dia12_desafio/usuarios.txt", 'r') as archivo:
             with open("Dia12_desafio/error.log", 'a+') as log: 
                 #El error se guarda con fecha, hora, num de linea y el error
                 log.write(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] ERROR en la linea {numero_linea}: {e}\n")
-                print(f"ERROR:", e) #Si hay un error, se imprime
+                print(f"ERROR:", e) #Si hay un error, se imprime"""
 
 
