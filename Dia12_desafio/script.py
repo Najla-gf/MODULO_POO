@@ -12,7 +12,7 @@ with open("Dia12_desafio/usuarios.txt", 'r') as archivo:
     lista_usuarios = []
     
     #Iteramos cada linea y obtenemos el numero de linea
-    for num_linea, linea in enumerate(archivo, start=1):
+    for numero_linea, linea in enumerate(archivo):
         
         try:
             #Se carga la info del usuario desde la línea
@@ -26,11 +26,10 @@ with open("Dia12_desafio/usuarios.txt", 'r') as archivo:
             lista_usuarios.append(datos_usuarios) #se agregan los datos a la lista
 
         except Exception as e:
-            print(f"ERROR:", e) #Si hay un error, se imprime
-                
             #El error se guarda en el registro de errores
             with open("Dia12_desafio/error.log", 'a+') as log: 
                 #El error se guarda con fecha, hora, num de linea y el error
-                log.write(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] ERROR en la linea {num_linea}: {e}\n")
+                log.write(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] ERROR en la linea {numero_linea}: {e}\n")
+                print(f"ERROR:", e) #Si hay un error, se imprime
 
 
