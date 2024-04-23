@@ -3,9 +3,9 @@
 Este código incluye una solución para un desafío planteado el Día 12. Se trata de un sistema para cargar usuarios desde un archivo de texto y procesarlos en Python.
 
 # Integrantes Grupo 2:
-    - Najla Gatica
-    - Yanina Belmar
     - Edinson Ahumada
+    - Yanina Belmar
+    - Najla Gatica
     - Pablo Hernández
     - Manuel Ruiz
     - Livio Gutierrez
