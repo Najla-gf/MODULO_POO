@@ -2,32 +2,37 @@ from usuario import Usuario
 from datetime import datetime
 import json
 
+#Funciones para escribir errores en un archivo de registro
 def escribir_error(err):
-    now = datetime.now()
-    with open("Dia12_desafio/error.log", 'a+') as log: 
+    now = datetime.now() #Fecha y hora actual
+    with open("Dia12_desafio/error.log", 'a+') as log: #Se abre el archivo en modo append+
         log.write(f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {err}\n")
-        print(err)
+        print(err) #Se imprime el error en la consola
         log.close()
 
+#Función para cargar usuarios de un archivo de texto
 def cargar_usuarios(archivo):
-    lista_usuarios = []
-    numero_linea = 1
+    lista_usuarios = [] #lista que almacena los usuarios
+    numero_linea = 1 #Variable para leer el num de linea
     with open(archivo, 'r') as file:
-        for linea in file:
+        for linea in file: #Se itera cada linea del archivo
             try:
                 datos_usuario = json.loads(linea.strip()) #le quita espacios y saltos de linea que pueda tener
+                #objeto de Usuario con los datos cargados
                 usuario = Usuario(datos_usuario['nombre'], 
                                 datos_usuario['apellido'], 
                                 datos_usuario['email'], 
                                 datos_usuario['genero'])
-                lista_usuarios.append(usuario)
+                lista_usuarios.append(usuario) #se agrega a la lista
+            #Captura cualquier excepción que ocurra durante la ejecución
             except Exception as e:
                 escribir_error(f"ERROR en la linea {numero_linea}: {e}")
-            numero_linea += 1 #se agrega una linea más
-    return lista_usuarios
+            numero_linea += 1 #Se agrega una linea más
+    return lista_usuarios #Devuelve la lista de usuarios cargados
 
+#carga los usuarios del archivo
 usuarios = cargar_usuarios('Dia12_desafio/usuarios.txt')
-for usuario in usuarios:
+for usuario in usuarios: #Itera cada uno y entrega los datos solicitados
     print(f'{usuario.nombre} {usuario.apellidos} - {usuario.email}')
 
 

@@ -6,9 +6,9 @@ Este código incluye una solución para un desafío planteado el Día 12. Se tra
     - Edinson Ahumada
     - Yanina Belmar
     - Najla Gatica
+    - Livio Gutierrez
     - Pablo Hernández
     - Manuel Ruiz
-    - Livio Gutierrez
 
 ## Funcionalidades
 
