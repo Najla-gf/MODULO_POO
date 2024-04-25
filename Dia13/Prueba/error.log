@@ -1,0 +1,28 @@
+LargoExcedidoError: El nombre de la campaña es demasiado largo
+SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
+LargoExcedidoError: El nombre de la campaña es demasiado largo
+SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
+LargoExcedidoError: El nombre de la campaña es demasiado largo
+SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
+LargoExcedidoError: El nombre de la campaña es demasiado largo
+SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
+[2024-04-24 20:58:48] LargoExcedidoError: El nombre de la campania es demasiado largo
+[2024-04-24 20:58:48] SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
+[2024-04-24 20:59:00] LargoExcedidoError: El nombre de la campania es demasiado largo
+[2024-04-24 20:59:00] SubTipoInvalidoError: Subtipo de anuncio invalido, Subtipo: invalido
+[2024-04-24 21:01:15] LargoExcedidoError: El nombre de la campania es demasiado largo
+[2024-04-24 21:01:15] SubTipoInvalidoError: Subtipo de anuncio invalido, Subtipo: invalido
+[2024-04-24 21:13:09] LargoExcedidoError: El nombre de la campania es demasiado largo
+[2024-04-24 21:13:09] SubTipoInvalidoError: Subtipo de anuncio invalido, Subtipo: invalido
+[2024-04-24 21:29:06] LargoExcedidoError: El nombre de la campania es demasiado largo
+[2024-04-24 21:29:06] SubTipoInvalidoError: Subtipo de anuncio invalido, Subtipo: invalido
+[2024-04-24 21:31:54] El nombre de la campaña excede los 250 caracteres
+[2024-04-24 21:34:04] El nombre de la campaña excede los 250 caracteres
+[2024-04-24 21:35:47] ('No es un subtipo permitido para esta instancia', '& C:/Users/Najla/AppData/Local/Programs/Python/Python312/python.exe c:/0044-1/MODULO_POO/Dia13/Prueba/demo.py')
+[2024-04-24 21:36:43] ('Subtipo de anuncio invalido', 'hola')
+[2024-04-24 21:38:12] ERROR: ('Subtipo de anuncio invalido', 'asgfasd')
+[2024-04-24 21:52:24] ERROR: ('Subtipo de anuncio invalido', 'asfdasd ')
+[2024-04-24 21:52:53] ERROR: El nombre de la campaña excede los 250 caracteres
+[2024-04-24 21:54:45] ERROR: ('Subtipo de anuncio invalido', 'holaaa')
+[2024-04-24 21:56:03] ERROR: El nombre de la campania excede los 250 caracteres
+[2024-04-24 21:57:31] ERROR: ('Subtipo de anuncio invalido', 'holi')
