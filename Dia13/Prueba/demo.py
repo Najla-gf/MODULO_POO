@@ -10,13 +10,12 @@ def manejar_excepciones():
         print(campana)
 
         # Solicitar un nuevo nombre para la campaña
-        nuevo_nombre = input("Ingrese el nuevo nombre para la campaña: ") * 50  # Simula un nombre de campaña demasiado largo
+        nuevo_nombre = input("Ingrese el nuevo nombre para la campaña: ") #* 50  # Simula un nombre de campaña demasiado largo
         campana.nombre = nuevo_nombre
 
         # Solicitar un nuevo sub_tipo para el anuncio de Video
         nuevo_sub_tipo = input("Ingrese el nuevo subtipo para el anuncio de Video: ")
-        if nuevo_sub_tipo not in ("instream", "outstream"):  # Verifica si el subtipo de anuncio es válido
-            raise SubTipoInvalidoError("Subtipo de anuncio invalido", nuevo_sub_tipo)
+        campana.anuncios[0].sub_tipo = nuevo_sub_tipo
 
     except (LargoExcedidoError, SubTipoInvalidoError) as error:
         now = datetime.now()

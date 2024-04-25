@@ -26,3 +26,9 @@ SubTipoInvalidoError: Subtipo de anuncio inválido, Subtipo: invalido
 [2024-04-24 21:54:45] ERROR: ('Subtipo de anuncio invalido', 'holaaa')
 [2024-04-24 21:56:03] ERROR: El nombre de la campania excede los 250 caracteres
 [2024-04-24 21:57:31] ERROR: ('Subtipo de anuncio invalido', 'holi')
+[2024-04-24 22:38:09] ERROR: El nombre de la campania excede los 250 caracteres
+[2024-04-24 22:38:45] ERROR: ('Subtipo de anuncio invalido', 'hola')
+[2024-04-24 23:04:06] ERROR: El nombre de la campania excede los 250 caracteres
+[2024-04-24 23:08:15] ERROR: ('No es un subtipo permitido para esta instancia', 'subtipo')
+[2024-04-24 23:10:31] ERROR: El nombre de la campania excede los 250 caracteres
+[2024-04-24 23:10:51] ERROR: ('No es un subtipo permitido para esta instancia', 'subtipo2')
