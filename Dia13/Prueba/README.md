@@ -6,7 +6,7 @@ El equipo de desarrollo ha decidido crear una API utilizando Python para gestion
 
 El siguiente diagrama de clases muestra la estructura de clases que se utilizará en la API:
 
-![Diagrama de Clases](Prueba/Diagrama.png)
+![Diagrama de Clases](Diagrama.png)
 
 ## Archivos de Código
 
