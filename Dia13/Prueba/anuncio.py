@@ -86,8 +86,10 @@ class Video(Anuncio):
     SUB_TIPOS = ("instream", "outstream")
 
     def __init__(self, url_archivo: str, url_clic: str, sub_tipo: str, duracion: int) -> None:
-        super().__init__(1, 1, url_archivo, url_clic, sub_tipo)
-        self.__duracion = max(duracion, 5)  # Duración del video
+        super().__init__(0, 0, url_archivo, url_clic, sub_tipo)
+        self.__ancho = 1
+        self.__alto = 1
+        self.__duracion = duracion if duracion > 0 else 5  # Duración del video
 
     @property
     def duracion(self):
@@ -95,7 +97,23 @@ class Video(Anuncio):
 
     @duracion.setter
     def duracion(self, duracion):
-        self.__duracion = max(duracion, 5)  # Se actualiza la duración del video
+        self.__duracion = duracion if duracion > 0 else 5  # Se actualiza la duración del video
+
+    @property
+    def ancho(self):
+        return self.__ancho
+
+    @ancho.setter
+    def ancho(self, value):
+        self.__ancho = value
+
+    @property
+    def alto(self):
+        return self.__alto
+
+    @alto.setter
+    def alto(self, value):
+        self.__alto = value
 
     def comprimir_anuncio(self):
         print("COMPRESIÓN DE VIDEO NO IMPLEMENTADA AÚN")
@@ -136,3 +154,7 @@ class Social(Anuncio):
         return Social.SUB_TIPOS
 
 #Anuncio.mostrar_formatos()
+if __name__ == "__main__":
+    pelicula = Video("","","",0)
+    pelicula.ancho = 100
+    print(pelicula.ancho)

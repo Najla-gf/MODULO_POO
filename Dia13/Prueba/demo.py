@@ -15,7 +15,7 @@ def manejar_excepciones():
 
         # Solicitar un nuevo sub_tipo para el anuncio de Video
         nuevo_sub_tipo = input("Ingrese el nuevo subtipo para el anuncio de Video: ")
-        campana.anuncios[0].sub_tipo = nuevo_sub_tipo
+        campana.anuncios[0].sub_tipo = nuevo_sub_tipo # Actualiza el subtipo del primer anuncio de la campaña con el nuevo subtipo ingresado
 
     except (LargoExcedidoError, SubTipoInvalidoError) as error:
         now = datetime.now()

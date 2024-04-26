@@ -7,10 +7,12 @@ class Campana:
         self.__nombre = nombre
         self.__fecha_inicio = fecha_inicio
         self.__fecha_termino = fecha_termino
-        self.__anuncios = [self.__crear_anuncio(info) for info in anuncios_info]
+        self.__anuncios = [self.__crear_anuncio(info) for info in anuncios_info] # Crea los anuncios a partir de la información proporcionada
 
     def __crear_anuncio(self, info: dict):
-        tipo_anuncio = info.get("tipo", "")
+        # Método privado para crear un anuncio a partir de la información proporcionada
+        tipo_anuncio = info.get("tipo", "") # Obtiene el tipo de anuncio del diccionario de información
+        # Crea las instancias de video, display y social
         if tipo_anuncio == "Video":
             return Video(info.get("url_archivo", ""), info.get("url_clic", ""), info.get("sub_tipo", ""), info.get("duracion", 0))
         elif tipo_anuncio == "Display":
@@ -49,9 +51,11 @@ class Campana:
         return self.__anuncios
 
     def __str__(self):
+        # Método especial para representar la información de la campaña como cadena de texto
         conteo_anuncios = {'Video': 0, 'Display': 0, 'Social': 0}
         for anuncio in self.anuncios:
-            tipo = anuncio.__class__.__name__
-            conteo_anuncios[tipo] += 1
+            tipo = anuncio.__class__.__name__ # Obtiene el nombre de la clase del anuncio
+            conteo_anuncios[tipo] += 1 # Incrementa el contador para el tipo de anuncio
+        # Retorna una cadena de texto con el nombre de la campaña y la cantidad de anuncios por tipo
         return f"Nombre de la campaña: {self.nombre}\nAnuncios: {conteo_anuncios['Video']} Video, {conteo_anuncios['Display']} Display, {conteo_anuncios['Social']} Social"
 
